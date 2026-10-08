@@ -8,7 +8,7 @@ class Solution:
         while R < len(nums):
             sum += nums[R]
             if sum >= target:
-                while sum >= target and L <= R:
+                while sum >= target:
                     res = min(res, R - L + 1)
                     sum -= nums[L]
                     L += 1
