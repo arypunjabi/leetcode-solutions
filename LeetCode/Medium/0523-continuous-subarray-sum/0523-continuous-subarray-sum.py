@@ -12,4 +12,3 @@ class Solution:
                 myDict[count % k] = i
 
         return False
-
