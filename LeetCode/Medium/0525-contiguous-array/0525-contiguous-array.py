@@ -1,22 +1,18 @@
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
+        runningSum = 0
         dic = {}
-        count = 0
+        dic[0] = -1
         res = 0
-
         for i in range(len(nums)):
             if nums[i] == 0:
-                count -= 1
+                runningSum -= 1
             else:
-                count += 1
+                runningSum += 1
             
-            if count == 0:
-                res = i + 1
-            
-            if count in dic:
-                res = max(res, i - dic[count])
+            if runningSum in dic:
+                res = max(res, i-dic[runningSum])
             else:
-                dic[count] = i
+                dic[runningSum] = i
         
         return res
-
